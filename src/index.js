@@ -1,7 +1,7 @@
-import { saludar } from './js/componentes';
 import './styles.css';
 
-const nombre = 'Alex!!!';
-saludar( nombre );
+import { Todo } from './classes/todo.class';
 
+const tarea = new Todo( 'Tomar medicina.' )
 
+console.log( tarea );
