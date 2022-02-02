@@ -1,7 +1,13 @@
 import './styles.css';
 
-import { Todo } from './classes/todo.class';
+import { Todo, TodoList } from './classes';
+
+const todoList = new TodoList();
 
 const tarea = new Todo( 'Tomar medicina.' )
+const tarea2 = new Todo( 'Comprar curso.' )
 
-console.log( tarea );
+todoList.nuevoTodo( tarea );
+todoList.nuevoTodo( tarea2 );
+
+console.log( todoList );
