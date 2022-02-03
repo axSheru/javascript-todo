@@ -18,13 +18,10 @@ export class TodoList {
 
     cambiarEstatusCompletado( id ) {
 
-        for ( const todo of this.todos ) {
+        const index = this.todos.findIndex( todo => todo.id == id );
 
-            if ( todo.id == id ) {
-                todo.completado = ! todo.completado;
-                break;
-            }
-
+        if ( index >= 0 ) {
+            this.todos[ index ].completado = ! this.todos[ index ].completado;
         }
 
     }
