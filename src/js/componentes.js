@@ -47,3 +47,18 @@ txtInput.addEventListener( 'keyup', ( event ) => {
 
 });
 
+divTodoList.addEventListener( 'click', ( event ) => {
+
+    const nombreElemento = event.target.localName;// Input, label, button...
+    const todoElemento = event.target.parentElement.parentElement;
+    const todoId = todoElemento.getAttribute( 'data-id' );
+
+    if ( nombreElemento.includes( 'input' ) ) {// Click en el checkbox.
+
+        todoList.cambiarEstatusCompletado( todoId );
+        todoElemento.classList.toggle( 'completed' );
+
+    }
+
+});
+
