@@ -34,8 +34,6 @@ txtInput.addEventListener( 'keyup', ( event ) => {
 
     if ( event.keyCode === 13 && txtInput.value.trim().length > 0 ) {
 
-        console.log(txtInput.value.trim().length);
-
         const nuevoTodo = new Todo( txtInput.value );
         todoList.nuevoTodo( nuevoTodo );
 
@@ -57,6 +55,12 @@ divTodoList.addEventListener( 'click', ( event ) => {
 
         todoList.cambiarEstatusCompletado( todoId );
         todoElemento.classList.toggle( 'completed' );
+
+    } else if ( nombreElemento.includes( 'button' ) ) {// Click en el input.
+
+        todoList.eliminarTodo( todoId );
+        todoElemento.classList.toggle( 'completed' );
+        divTodoList.removeChild( todoElemento );
 
     }
 
