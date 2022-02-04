@@ -32,6 +32,14 @@ export class TodoList {
 
     }
 
+    guardarLocalStorage() {
+
+    }
+
+    cargarLocalStorage() {
+        
+    }
+
 }
 
 
