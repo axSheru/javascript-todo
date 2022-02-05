@@ -1,6 +1,6 @@
-# Webpack inicial.
+# Todo app.
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
+En este proyecto se creó una app para anotar lista de tareas, se puede filtrar, limpiar, y agregar nuevos elementos. Estos son persistentes en el navegador.
 
 ### Instrucciones:
 
