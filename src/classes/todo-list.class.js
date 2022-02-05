@@ -54,6 +54,10 @@ export class TodoList {
         
     }
 
+    contarPendientes() {
+        return this.todos.filter( todo => ! todo.completado ).length;
+    }
+
 }
 
 
