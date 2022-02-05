@@ -7,6 +7,7 @@ const divTodoList = document.querySelector( '.todo-list' );
 const txtInput = document.querySelector( '.new-todo' );
 const btnBorrarCompletados = document.querySelector( '.clear-completed' );
 const ulFiltros = document.querySelector( '.filters' );
+const anchorFiltros = document.querySelectorAll( '.filtro' );
 
 export const crearTodoHtml = ( todo ) => {
 
@@ -88,11 +89,13 @@ ulFiltros.addEventListener( 'click', ( event ) => {
 
     if ( ! filtro ) return;
 
+    anchorFiltros.forEach( elem => elem.classList.remove( 'selected' ) );
+    event.target.classList.add( 'selected' );
+
     for ( const elemento of divTodoList.children ) {
         
         elemento.classList.remove( 'hidden' );
         const completado = elemento.classList.contains( 'completed' );
-        console.log(completado);
 
         switch ( filtro ) {
             case 'Pendientes':
