@@ -8,6 +8,7 @@ const txtInput = document.querySelector( '.new-todo' );
 const btnBorrarCompletados = document.querySelector( '.clear-completed' );
 const ulFiltros = document.querySelector( '.filters' );
 const anchorFiltros = document.querySelectorAll( '.filtro' );
+const strongPendientes = document.querySelector( 'strong' );
 
 export const crearTodoHtml = ( todo ) => {
 
@@ -26,6 +27,9 @@ export const crearTodoHtml = ( todo ) => {
 
     divTodoList.append( div.firstElementChild );
 
+    const pendientes = todoList.contarPendientes();
+    strongPendientes.innerText = pendientes;
+
     return div.firstElementChild;
 
 };
@@ -43,6 +47,9 @@ txtInput.addEventListener( 'keyup', ( event ) => {
         crearTodoHtml( nuevoTodo );
 
         txtInput.value = '';
+
+        const pendientes = todoList.contarPendientes();
+        strongPendientes.innerText = pendientes;
 
     }
 
@@ -66,6 +73,9 @@ divTodoList.addEventListener( 'click', ( event ) => {
         divTodoList.removeChild( todoElemento );
 
     }
+
+    const pendientes = todoList.contarPendientes();
+    strongPendientes.innerText = pendientes;
 
 });
 
