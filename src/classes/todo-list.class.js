@@ -8,11 +8,13 @@ export class TodoList {
 
     nuevoTodo( todo ) {
         this.todos.push( todo );
+        this.guardarLocalStorage();
     }
 
     eliminarTodo( id ) {
 
         this.todos = this.todos.filter( todo => todo.id != id );
+        this.guardarLocalStorage();
 
     }
 
@@ -22,6 +24,7 @@ export class TodoList {
 
         if ( index >= 0 ) {
             this.todos[ index ].completado = ! this.todos[ index ].completado;
+            this.guardarLocalStorage();
         }
 
     }
@@ -29,10 +32,13 @@ export class TodoList {
     eliminarCompletados() {
         
         this.todos = this.todos.filter( todo => ! todo.completado );
+        this.guardarLocalStorage();
 
     }
 
     guardarLocalStorage() {
+
+        localStorage.setItem( 'todo', JSON.stringify( this.todos ) );
 
     }
 
